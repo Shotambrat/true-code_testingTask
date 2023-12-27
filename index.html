@@ -7,7 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="dim-shum"></div>
+    <div class="dim-container">
+        <img src="/assets/img/Shum.jpg" alt="Dim" class="dim__elem">
+    </div>
+
+    <!-- <div class="hover-button-animation__container">
+        <div class="hover-button__first"></div>
+        <div class="hover-button__second"></div>
+    </div> -->
     <div class="content-container">
         <div class="content-header">
             <div class="header__logo">
@@ -24,7 +31,7 @@
                     </ul>
                 </div>
                 <div class="buttons-container">
-                    <button class="buttons__buy-button"> <p class="button-text">КУПИТЬ БИЛЕТЫ</p> </button>
+                    <button class="buttons__buy-button" id="openPopup"> <p class="button-text">КУПИТЬ БИЛЕТЫ</p> </button>
                 </div>
             </div>
         </div>
@@ -37,6 +44,33 @@
                 <h3 class="animation__first-text">ТОЧКА НАЗНАЧЕНИЯ:</h3>
                 <p class="animation__sec-text">MAPC</p>
             </div>
+        </div>
+    </div>
+
+    <div id="popup">
+        <div class="content-container">
+            <div class="content-header">
+                <div class="header-container">
+                    <h1>БРОНИРОВАНИЕ</h1><br/>
+                    <h1>БИЛЕТОВ</h1>
+                </div>
+                <button id="closePopup">X</button>
+            </div>
+            <div class="content-data">
+                <div class="flight-container">
+                    <label for="start">Дата заезда</label>
+                    <input type="date" id="start" name="trip-start" value="2022-05-13"/>
+                </div>
+                <div class="arrival-container">
+                    <label for="start">Дата выезда</label>
+                    <input type="date" id="start" name="trip-start" value="2032-05-13"/>
+                </div>
+                <div class="peoples-container">
+                    <label for="start">Количество</label>
+                    <input type="text" id="start" name="trip-start" />
+                </div>
+            </div>
+            <div class="content-button"><Button>КУПИТЬ БИЛЕТЫ</Button></div>
         </div>
     </div>
 

@@ -6,11 +6,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #fff;
     font-family: 'Montserrat', sans-serif;
 }
 
 body {
+    z-index: -2;
     display: flex;
     justify-content: center;
     height: 100vh;
@@ -20,20 +20,28 @@ body {
     background-size: 150%;
     background-repeat: no-repeat;
     overflow: hidden;
+    transition: 0.5s ease-out;
     animation: bgmove 1.5s ease-in-out
 }
 
-.dim-shum {
-    position: absolute;
+.dim-container {
+    z-index: -1;
+    position: fixed;
     top: 0;
-    left: 100vw;
-    background-image: url('/assets/img/Shum.jpg');
-    background-repeat: no-repeat;
-    height: 100vh;
+    left: 0;
     width: 100%;
-    opacity: 0;
-    animation: dimmove 5s forwards ease-in-out;
+    height: 100%;
     overflow: hidden;
+}
+
+.dim__elem {
+    opacity: 0;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: auto;
+    height: 200%;
+    animation: dimmove 16s linear;
 }
 
 .content-container {
@@ -56,6 +64,7 @@ body {
 
 .content-label {
     display: flex;
+    justify-content: flex-start;
     position: relative;
     width: 100%;
     margin-top: 8%;
@@ -156,6 +165,7 @@ li {
     color: #F2E1C2;
     text-decoration: none;
     transition: 0.5s ease-in-out;
+    z-index: 999;
 }
 
 .buttons-ssilka:hover {
@@ -179,6 +189,44 @@ li {
 
 .buttons__buy-button:hover {
     background-color: #F23207;
+}
+
+.hover-button-animation__container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.hover-button__first {
+    display: block;
+    height: 100%;
+    width: 30vw;
+    /* border: 2px solid red; */
+    /* transition: 2s ease-in-out; */
+}
+
+.hover-button__second {
+    display: block;
+    height: 100%;
+    width: 30vw;
+    /* border: 2px solid red; */
+    /* transition: 2s ease-in-out; */
+}
+
+#popup {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vw;
+    width: 100%;
+    background-color: #F2E1C2;
+    color: black;
 }
 
 button {
@@ -209,36 +257,70 @@ button {
 }
 
 
-/* @keyframes dimmove {
-    10% {
-        left: 0;
+/* 2sec, 8sec, 9sec, 16sec */
+
+@keyframes dimmove {
+    0% {
         opacity: 0.3;
     }
 
-    30% {
-        left: 0;
+    8% {
+        left: -50%;
+    }
+
+    13% {
+        left: -50%;
     }
 
     40% {
-        left: -100vw;
+        left: -350%;
+        opacity: 0.3;
     }
 
-    41% {
-        left: -120vw;
+    45% {
+        left: -410%;
         opacity: 0;
     }
 
-    42% {
+    65% {
         left: 0;
+        opacity: 0;
+    }
+    70% {
+        left: -80%;
+        opacity: 0.3;
     }
 
-    60% {
-        left: -100vw;
-        opasity: 0.3;
+    95% {
+        left: -350%;
+        opacity: 0.3;
     }
 
     100% {
-        left: -120vw;
-        opacity: 0.3;
+        left: -410%;
+        opacity: 0;
     }
-} */
+}
+
+
+@media only screen and (max-width: 1440px) {
+
+
+    .header-buttons {
+        width: 80%;
+        display: flex;
+        align-items: center;
+    }
+
+    .content-label {
+        margin-top: 1%;
+        transform: scale(0.8);
+        transform-origin: left top;
+    }
+}
+
+@media only screen and (max-width: 975px) {
+    body {
+        background-size: cover;
+    }
+}
