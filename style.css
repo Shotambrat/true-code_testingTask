@@ -219,7 +219,7 @@ li {
 }
 
 #popup {
-    display: block;
+    display: none;
     position: fixed;
     left: 0;
     top: 0;
