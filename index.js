@@ -22,27 +22,41 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // for hover aimation change bg location
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    const firstHoverButton = document.querySelector('.hover-button__first')
-    const secondHoverButton = document.querySelector('.hover-button__second')
-    const bg = document.querySelector('body');
 
-    firstHoverButton.addEventListener('mouseover', function() {
-        bg.style.backgroundPosition = "25% 50%";
-    });
-
-    secondHoverButton.addEventListener('mouseover', function() {
-        bg.style.backgroundPosition = "75% 50%";
-    });
-
-    firstHoverButton.addEventListener('mouseout', function() {
-        bg.style.backgroundPosition = "50% 50%";
-    });
-
-    secondHoverButton.addEventListener('mouseout', function() {
-        bg.style.backgroundPosition = "50% 50%";
-    });
+document.addEventListener('mousemove', function(event) {
+    let screenWidth = window.innerWidth;
+    let screenHeight = window.innerHeight;
+    let mouseX = event.clientX;
+    
+    if (mouseX < screenWidth / 3) {
+        document.body.style.backgroundPosition = '25% 50%';
+    } else if (mouseX < screenWidth * 2 / 3) {
+        document.body.style.backgroundPosition = '50% 50%';
+    } else {
+        document.body.style.backgroundPosition = '75% 50%';
+    }
 });
+// document.addEventListener("DOMContentLoaded", function(event) {
+//     const firstHoverButton = document.querySelector('.hover-button__first')
+//     const secondHoverButton = document.querySelector('.hover-button__second')
+//     const bg = document.querySelector('body');
+
+//     firstHoverButton.addEventListener('mouseover', function() {
+//         bg.style.backgroundPosition = "25% 50%";
+//     });
+
+//     secondHoverButton.addEventListener('mouseover', function() {
+//         bg.style.backgroundPosition = "75% 50%";
+//     });
+
+//     firstHoverButton.addEventListener('mouseout', function() {
+//         bg.style.backgroundPosition = "50% 50%";
+//     });
+
+//     secondHoverButton.addEventListener('mouseout', function() {
+//         bg.style.backgroundPosition = "50% 50%";
+//     });
+// });
 
 
 // for pop-up

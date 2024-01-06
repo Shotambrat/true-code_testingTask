@@ -19,7 +19,7 @@ body {
     background-position: 50% 50%;
     background-size: 150%;
     background-repeat: no-repeat;
-    overflow: hidden;
+    /* overflow: hidden; */
     transition: 0.5s ease-out;
     animation: bgmove 1.5s ease-in-out
 }
@@ -72,7 +72,7 @@ body {
 }
 
 .label-animation__block {
-    height: 100%;
+    height: calc(100% - 15px);
 }
 
 .label-animation__block:before {
@@ -81,9 +81,9 @@ body {
     position: relative;
     top: 5px;
     /* top: calc(100% - 10px); */
-    left: -4px; 
-    width: 10px;
-    height: 10px;
+    left: -2px; 
+    width: 6px;
+    height: 6px;
     border-radius: 50%;
     background-color: white;
     opacity: 0;
@@ -122,7 +122,7 @@ body {
 .animation__first-text {
     position: relative;
     font-size: 36px;
-    left: 28px;
+    left: 20px;
     bottom: 5px;
     opacity: 0;
     transition: opacity 2s;
@@ -152,6 +152,7 @@ body {
 }
 
 ul {
+    width: 570px;
     display: flex;
     justify-content: space-between;
 }
@@ -265,20 +266,20 @@ button {
     }
 
     8% {
-        left: -50%;
+        left: -720px;
     }
 
     13% {
-        left: -50%;
+        left: -720px;
     }
 
     40% {
-        left: -350%;
+        left: -2600px;
         opacity: 0.3;
     }
 
     45% {
-        left: -410%;
+        left: -3240px;
         opacity: 0;
     }
 
@@ -287,40 +288,68 @@ button {
         opacity: 0;
     }
     70% {
-        left: -80%;
+        left: -700px;
         opacity: 0.3;
     }
 
     95% {
-        left: -350%;
+        left: -2600px;
         opacity: 0.3;
     }
 
     100% {
-        left: -410%;
+        left: -3240px;
         opacity: 0;
     }
 }
 
+@media screen and (max-width: 1410px) {
 
-@media only screen and (max-width: 1440px) {
-
-
-    .header-buttons {
-        width: 80%;
-        display: flex;
-        align-items: center;
-    }
-
-    .content-label {
-        margin-top: 1%;
-        transform: scale(0.8);
-        transform-origin: left top;
+    body {
+        background-size: 250%;
     }
 }
 
-@media only screen and (max-width: 975px) {
+@media screen and (max-width: 1024px) {
+
     body {
-        background-size: cover;
+        background-size: 400%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+    body {
+        background-size: 500%;
+    }
+}
+
+@media screen and (max-width: 690px) {
+
+    body {
+        background-size: 700%;
+    }
+}
+
+
+
+@media screen and (max-width: 520px) {
+
+    body {
+        background-size: 1200%;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    body {
+        background-size: 1900%;
+    }
+}
+
+@media screen and (max-width: 370px) {
+
+    body {
+        background-size: 2900%;
     }
 }
