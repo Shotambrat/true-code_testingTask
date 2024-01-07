@@ -59,6 +59,8 @@ body {
     border: 2px solid white;
 }
 
+
+
 .header-buttons {
     width: 64.61%;
     display: flex;
@@ -319,6 +321,14 @@ button {
         width: 100%;
     }
 
+    .content-header {
+        margin: 0 0 0 60px;
+    }
+
+    .content-label {
+        margin: 0 0 0 60px;
+    }
+
 
 }
 
@@ -358,13 +368,19 @@ button {
         background-size: 1900%;
     }
 
-    /* .content-container {
-        width: 1000px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        border: 2px solid red;
-    } */
+    .content-header {
+        height: 300px;
+    }
+
+    .header__logo > img {
+        margin: 100px;
+        transform: scale(2.5);
+    }
+
+    .buttons__buy-button {
+        transform: scale(2.5);
+        margin: 0 100px 0 0;
+    }
 }
 
 @media screen and (max-width: 370px) {
