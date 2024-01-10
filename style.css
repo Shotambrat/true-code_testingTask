@@ -22,7 +22,7 @@ body {
     /* overflow: hidden; */
     transition: 0.5s ease-out;
     animation: bgmove 1.5s ease-in-out;
-    border: 2px solid red;
+    /* overflow: hidden; */
 }
 
 .dim-container {
@@ -47,7 +47,6 @@ body {
 
 .content-container {
     width: 83.3%;
-    border: 2px solid blue;
 }
 
 .content-header {
@@ -56,7 +55,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border: 2px solid white;
 }
 
 
@@ -74,7 +72,6 @@ body {
     width: 100%;
     margin-top: 8%;
     height: 600px;
-    border: 2px solid skyblue;
 }
 
 .label-animation__block {
@@ -241,6 +238,55 @@ button {
     cursor: pointer;
 }
 
+.burger {
+    display: none;
+    position: relative;
+    z-index: 50;
+    align-items: center ;
+    justify-content: flex-start;
+    width: 30px;
+    height: 18px;
+    /* border: 1px solid red; */
+}
+
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background: #FAF6F2;
+}
+
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #FAF6F2;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger::after {
+    bottom: 0;
+}
+
+.burger.active span {
+    transform: scale(0);
+}
+
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, 50%);
+}
+
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
 @keyframes lineAnimation {
     to {
         height: 100%;
@@ -335,6 +381,7 @@ button {
 @media screen and (max-width: 1024px) {
 
     body {
+        width: 1024px;
         background-size: 400%;
     }
 }
@@ -342,13 +389,19 @@ button {
 @media screen and (max-width: 768px) {
 
     body {
+        width: 768px;
         background-size: 500%;
     }
+
+    /* .burger {
+        display: flex;
+    } */
 }
 
 @media screen and (max-width: 690px) {
 
     body {
+        width: 690px;
         background-size: 700%;
     }
 }
@@ -358,6 +411,8 @@ button {
 @media screen and (max-width: 520px) {
 
     body {
+
+        width: 520px;
         background-size: 1200%;
     }
 }
@@ -365,27 +420,34 @@ button {
 @media screen and (max-width: 420px) {
 
     body {
+        width: 420px;
         background-size: 1900%;
     }
 
     .content-header {
         height: 300px;
+        margin: 0;
+    }
+
+    .content-label {
+        margin: 0;
     }
 
     .header__logo > img {
-        margin: 100px;
-        transform: scale(2.5);
+        /* margin: 100px; */
+        /* transform: scale(2.5); */
     }
 
     .buttons__buy-button {
-        transform: scale(2.5);
-        margin: 0 100px 0 0;
+        /* transform: scale(2.5); */
+        /* margin: 0 100px 0 0; */
     }
 }
 
 @media screen and (max-width: 370px) {
 
     body {
+        width: 370px;
         background-size: 2900%;
     }
 
